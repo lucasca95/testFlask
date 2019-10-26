@@ -14,16 +14,17 @@ def index(pag=None, tam=None):
         return "ERROR. Por favor elegir /pag/tam"
     else:
         #Leer el archivo
-        f_name='chico.txt'
+        f_name='./programas/chico.txt'
         try:
-            path_al_arhivo='./programas/' + f_name
-            f = open(path_al_arhivo, 'rt')
-            contenido=f.readlines()
-            print(contenido)
+            f = open(f_name, 'rt')
+            contenido = f.readlines()
+
         except:
             print('Hubo un error en el try')
+
         finally:
             f.close()
+
         if ((pag==0)and(tam==0)):
             longitud=len(contenido)
             #Devolver todo el archivo
