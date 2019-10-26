@@ -4,15 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TestFlask</title>
-    <!-- CSS -->
-    {% compress 'css' %}
-        <link href="{{ url_for('static', filename='less/home.less') }}" type="text/less">
-    {% endcompress %}
-    <!-- JS -->
-    {% compress 'js' %}
-        <script src="{{ url_for('static', filename='js/previews.js') }}"></script>
-    {% endcompress %}
+    <title>{% block title %}{% endblock %} - TobyTeam_Proyecto N°16</title>
 </head>
 <body>
     {% include 'nav.html' %}

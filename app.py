@@ -1,5 +1,4 @@
 from flask import Flask, url_for, render_template, request, Response
-from flask_static_compress import FlaskStaticCompress
 import sqlite3
 
 app = Flask(__name__,
@@ -8,11 +7,6 @@ app = Flask(__name__,
             static_folder="static"
             )
 
-app.config['COMPRESSOR_DEBUG'] = app.config.get('DEBUG')
-app.config['COMPRESSOR_STATIC_PREFIX'] = 'static'
-app.config['COMPRESSOR_OUTPUT_DIR'] = 'build'
-compress = FlaskStaticCompress(app)
-
 @app.route('/', methods=['GET'])
 @app.route('/<int:pag>/<int:tam>/', methods=['GET'])
 def index(pag=None, tam=None):
@@ -20,10 +14,12 @@ def index(pag=None, tam=None):
         return "ERROR. Por favor elegir /pag/tam"
     else:
         #Leer el archivo
-        f_name='programa.txt'
+        f_name='chico.txt'
         try:
-            f=open(f_name, 'rt')
+            path_al_arhivo='./programas/' + f_name
+            f = open(path_al_arhivo, 'rt')
             contenido=f.readlines()
+            print(contenido)
         except:
             print('Hubo un error en el try')
         finally:
