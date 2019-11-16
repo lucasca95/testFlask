@@ -1,2 +1,1 @@
-# testFlask
-https://hackersandslackers.com/manage-database-models-with-flask-sqlalchemy
+https://www.youtube.com/watch?v=BUmUV8YOzgM&list=PLF2JzgCW6-YY_TZCmBrbOpgx5pSNBD0_L
